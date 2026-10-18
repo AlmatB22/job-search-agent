@@ -290,3 +290,24 @@ Choices inside the eval:
   about 2 s later; short ones keep the fast path.
 - **Lesson:** the eval fed postings from files, so it couldn't catch a transport
   problem. Only the end-to-end test did.
+
+## Hermes and Telegram (Phase 7)
+
+- **Decision:** Hermes runs the conversation on Claude Haiku 5.5 at low effort and
+  calls the three tools over MCP; the judgment stays in the tool server, on Sonnet.
+- **Least privilege, in two layers:** Telegram's tool list is exactly `clarify`,
+  `todo` and `mcp-jsa`. The setup wizard had left it on the default preset, which
+  includes terminal, file, web, browser, cron and messaging. On top of that,
+  `agent.disabled_toolsets` removes 13 toolsets on every platform.
+- **The agent's instructions** (`hermes/SOUL.md`) say to approve only on an explicit
+  "approve <id>". In testing, a bare "6" got a request to confirm, not an approval.
+- **Secrets never pass through chat or the repo.** The wizard ran in a separate
+  terminal; I checked `hermes-data/.env` for variable names, value lengths and
+  status codes only, never the values.
+- **Things the live test found:** a revoked agent key (401; replaced with a new key,
+  kept separate from the tools' key); MCP tool names with double underscores
+  (`mcp__jsa__…`), not the single ones in the docs; and Telegram splitting long
+  postings (see the section above on long postings).
+- **In an interview:** "I tested it end to end in Telegram, including an
+  injection posting and a message from an account that isn't on the allow-list. The
+  live test found three problems the offline eval couldn't, and I fixed each one."
