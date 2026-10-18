@@ -212,3 +212,33 @@ Choices inside the eval:
 - **Lesson for an interview:** "My first conclusion about this change was wrong,
   because I'd measured it once. With repeated runs the same change was a clear
   improvement. Now no prompt change is judged on a single run."
+
+## mcp_server.py: the agent's interface (Phase 5)
+
+- **Decision:** an MCP server with three tools over Streamable HTTP, as a thin layer
+  over `pipeline.analyze()` and the tracker, the same code the CLI calls.
+- **Alternative:** writing the logic as a Hermes skill.
+- **Why:** MCP is the standard way for agent platforms to discover tools, so the same
+  server works with Hermes, OpenClaw or any MCP client. The judgment, evidence and
+  cost logging stay in my code, not in the agent's prompt.
+- **Human in the loop by design:** `analyze_posting` only creates drafts. Only
+  `approve_application` changes a draft, and its description tells the agent to call
+  it only when the user names the id. No tool can delete, email or submit anything,
+  so a malicious posting has nothing dangerous to steer the agent towards. Each tool
+  also carries MCP annotations (read-only, non-destructive) that clients can use for
+  their own approval rules.
+- **Input limits:** empty postings and postings over 20,000 characters are rejected
+  before any model is called, which caps the cost of a bad request.
+- **Network safety:** the server binds to 127.0.0.1 by default. On any other address
+  it refuses to start without an allow-list of Host headers, the SDK's defence
+  against DNS rebinding, where a web page tricks a browser into calling a local
+  server. It was tested: a forged Host header gets 421.
+- **SDK drift:** the plan's sample code used `FastMCP` from mcp 1.x. The installed
+  mcp 2.3.0 renamed it `MCPServer` and moved the host and port settings to `run()`.
+  I read the installed SDK instead of following the plan blindly.
+- **Testing:** the tools are tested in-process with the SDK's `Client(server)`, with
+  no network and no API calls. Then one real HTTP session confirmed discovery, a full
+  analysis ($0.034, 16 s), the draft in the tracker and the cost rows.
+- **In an interview:** "The agent can only read, analyze and create drafts. Approval
+  needs the user's explicit instruction, and nothing can send or delete, so even a
+  successful prompt injection can't do real damage."

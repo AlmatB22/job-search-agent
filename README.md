@@ -43,6 +43,26 @@ Design decisions are explained in [docs/design-notes.md](docs/design-notes.md).
 | `hermes/` | Hermes `mcp_servers` config snippet (no secrets) |
 | `tests/` | pytest unit tests |
 
+## MCP server
+
+```sh
+uv run python -m jsa.mcp_server   # Streamable HTTP at http://127.0.0.1:8000/mcp
+```
+
+Three tools, the same code the CLI uses:
+
+| Tool | Does | Changes data? |
+| --- | --- | --- |
+| `analyze_posting(posting_text)` | Runs the pipeline and saves a draft; returns fit, evidence, cited bullets, gaps, warnings, draft id and cost | Adds a draft |
+| `approve_application(application_id, notes)` | Moves one draft to approved, only when the user says so | Yes |
+| `list_applications(status)` | Lists recent applications | No |
+
+There is deliberately no tool that deletes, emails or submits anything. The server listens on
+127.0.0.1 unless `JSA_MCP_HOST` says otherwise, and refuses a non-local address without
+`JSA_MCP_ALLOWED_HOSTS`, which checks the Host header against DNS rebinding. To try the tools by
+hand, run `npx @modelcontextprotocol/inspector` and connect to the URL above with the
+"Streamable HTTP" transport.
+
 ## Evaluation
 
 ```sh
