@@ -18,7 +18,11 @@
 dawson.txt:
   title_contains: AI Solutions Developer
   must_have_contains: [Python, JavaScript, LLM API, workflow automation]
-  expected_verdict: partial
+  # Re-labelled by the author on 2026-10-18 after the candidate's documents changed:
+  # projects.md now describes the built MCP server, eval suite, Docker setup and
+  # Telegram agent. Only Node.js, workflow platforms, CRM platforms and years of
+  # experience remain partial. Was: partial (against the earlier documents).
+  expected_verdict: strong
 
 # Postings collected from public employer job boards on 2026-10-17 (source URL at
 # the top of each file). The title and must-have terms are copied from each
