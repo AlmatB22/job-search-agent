@@ -18,8 +18,8 @@ platform_toolsets:
 
 agent:
   # Fewer tools means fewer ways for a malicious posting to steer the agent.
-  # The job needs only the three jsa tools (mcp_jsa_analyze_posting,
-  # mcp_jsa_approve_application, mcp_jsa_list_applications).
+  # The job needs only the three jsa tools (mcp__jsa__analyze_posting,
+  # mcp__jsa__approve_application, mcp__jsa__list_applications).
   disabled_toolsets:
     - web             # no browsing or page fetching
     - search
