@@ -10,6 +10,12 @@ mcp_servers:
       resources: false               # the server exposes only tools
       prompts: false
 
+# Hermes's default Telegram preset (hermes-telegram) includes terminal, file, web,
+# browser, cronjob and messaging. Replace it: MCP tools arrive as the toolset
+# mcp-<server>, listed explicitly so a custom list can't silently drop them.
+platform_toolsets:
+  telegram: [clarify, todo, mcp-jsa]
+
 agent:
   # Fewer tools means fewer ways for a malicious posting to steer the agent.
   # The job needs only the three jsa tools (mcp_jsa_analyze_posting,
