@@ -1,0 +1,3 @@
+# Services: hermes + jsa-mcp.
+# Filled in when the MCP server and Hermes are wired together.
+services: {}

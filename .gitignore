@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Job search agent
+.env
+data/my_docs/
+data/db/
+hermes-data/
+*.sqlite

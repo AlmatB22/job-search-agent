@@ -1,0 +1,30 @@
+[project]
+name = "jsa"
+version = "0.1.0"
+description = "Job search agent: posting parsing, fit matching and application tracking"
+readme = "README.md"
+authors = [
+    { name = "almatbolatbekov", email = "almat.bolatbek22@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=1.15.0",
+    "mcp[cli]>=2.3.0",
+    "pydantic>=2.14.1",
+    "pypdf>=6.21.1",
+    "python-dotenv>=1.2.4",
+    "pyyaml>=6.0.3",
+    "rank-bm25>=0.2.2",
+]
+
+[project.scripts]
+jsa = "jsa.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.28,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
