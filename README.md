@@ -130,6 +130,7 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
 
 | Date | Commit | Postings | Result |
 | --- | --- | --- | --- |
+| 2026-10-18 | fb2f45e | 14 × 3 runs (documents updated with the built agent; Dawson re-labelled strong) | Verdict 10/14 · Stable 10/14 · Extraction 13/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.034 · avg 14 s. Dawson now strong 3/3. Not comparable with earlier rows (different documents). AssetWatch (22/22/42) and Jane staff (45/42/28) sit on the 40-point line and flipped against the previous run; Bevi and 1Password are the same two debatable labels |
 | 2026-10-17 | 934e4e6 | 14 × 3 runs (years of experience counted in the verdict, retried) | Verdict 12/14 · Stable 12/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s. Kept: the 6+ year staff role moved to poor (2/3, mean score 47 to 33) and no passing posting regressed |
 | 2026-10-17 | 36fd41b | 14 × 3 runs (repeat runs; verdict derived from the score) | Verdict 11/14 · Stable 13/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.034 · avg 14 s. Misses are consistent: Bevi poor 3/3, 1Password partial 3/3, Jane staff partial 3/3 |
 | 2026-10-17 | 0c0989a | 14 (baseline prompt again, corrected key) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s. AssetWatch and Bevi were poor again with the original prompt, so the previous drop was run-to-run variation, not the rule. Single runs can't separate changes from noise on borderline postings |
@@ -139,9 +140,10 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
 
 ### Known limitations
 
-- **Borderline verdicts vary between runs.** Postings scoring near the 40-point partial/poor line flip
-  from run to run with identical code (AssetWatch: 42, 18, 22; Bevi: 46, 30, 30). One run per posting
-  can't show whether a prompt change helped; repeated runs are needed.
+- **Borderline verdicts vary between runs, even with three runs each.** Postings scoring near the
+  40-point partial/poor line flip from run to run with identical code and documents (AssetWatch: 42, 45,
+  22 in one baseline; 22, 22, 42 in the next). Repeated runs make these visible, but a majority of three
+  can't stabilise them; five runs or a wider margin around 40 would be needed.
 - **Score and verdict used to disagree** (a score of 38 labelled partial). Fixed: the guard now derives
   the verdict from the score.
 - **Seniority is weighed coarsely.** Years of experience now count in the verdict, which moved the 6+ year
