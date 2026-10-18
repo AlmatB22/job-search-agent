@@ -173,3 +173,30 @@ Choices inside the eval:
   fixed answer key. It checks extraction, verdicts, invented numbers, a
   prompt-injection twin and cost per posting, and the pass rate goes in the
   changelog."
+
+## Measuring through noise (repeat runs)
+
+- **What happened:** the same code gave AssetWatch scores of 42, 18 and 22 on three
+  runs. I blamed a prompt change for a drop that turned out to be noise, and
+  reverted it on no real evidence.
+- **Decision:** `run_evals.py --repeat N` runs each posting N times. A verdict counts
+  only when it's a clear majority, and each posting reports how stable it was
+  (for example, "partial 2/3"). Safety checks are stricter: extraction, numbers
+  and the injection flag must hold on every run, because one invented number in
+  three runs is still an invented number.
+- **Why:** with LLMs you can't control sampling here (Sonnet 5.5 rejects
+  non-default temperature), so the eval has to treat each run as a sample. A
+  prompt change counts as an improvement only if it beats the noise.
+- **In an interview:** "I found my eval couldn't tell a prompt change from
+  run-to-run variance, so I added repeated runs with majority verdicts and a
+  stability metric before tuning anything else."
+
+## The verdict comes from the score
+
+- **Decision:** the guard derives the verdict from the clamped fit score, using the
+  rubric's thresholds (75 and up strong, under 40 poor). It no longer trusts the
+  model's label.
+- **Why:** the model once scored a posting 38 and still called it partial. The
+  score is the finer-grained signal, so code maps it to a label and the two
+  can't contradict each other. This is the same rule as the citation guard:
+  code enforces what the prompt only asks for.

@@ -48,6 +48,7 @@ Design decisions are explained in [docs/design-notes.md](docs/design-notes.md).
 ```sh
 uv run python evals/run_evals.py                # every posting in the answer key; writes evals/results.md
 uv run python evals/run_evals.py --only dawson  # one posting while iterating on a prompt
+uv run python evals/run_evals.py --repeat 3     # 3 runs per posting: majority verdict and stability
 ```
 
 Each posting in `evals/postings/` runs through the real pipeline (about $0.05 each) and is
@@ -69,6 +70,7 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
 
 | Date | Commit | Postings | Result |
 | --- | --- | --- | --- |
+| 2026-10-17 | 36fd41b | 14 × 3 runs (repeat runs; verdict derived from the score) | Verdict 11/14 · Stable 13/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.034 · avg 14 s. Misses are consistent: Bevi poor 3/3, 1Password partial 3/3, Jane staff partial 3/3 |
 | 2026-10-17 | 0c0989a | 14 (baseline prompt again, corrected key) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s. AssetWatch and Bevi were poor again with the original prompt, so the previous drop was run-to-run variation, not the rule. Single runs can't separate changes from noise on borderline postings |
 | 2026-10-17 | 193611e | 14 (years of experience counted in the verdict; AssetWatch key terms fixed) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · avg $0.033 · avg 13 s. AssetWatch and Bevi fell to poor; the rule was reverted, but see the 0c0989a row |
 | 2026-10-17 | 9853431 | 14 (baseline: 10 clean + 3 poor + injection) | Verdict 12/14 · Extraction 13/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s |
@@ -79,8 +81,8 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
 - **Borderline verdicts vary between runs.** Postings scoring near the 40-point partial/poor line flip
   from run to run with identical code (AssetWatch: 42, 18, 22; Bevi: 46, 30, 30). One run per posting
   can't show whether a prompt change helped; repeated runs are needed.
-- **Score and verdict can disagree.** The Jane staff role scored 38 but was labelled partial, although
-  the rubric puts scores below 40 at poor.
+- **Score and verdict used to disagree** (a score of 38 labelled partial). Fixed: the guard now derives
+  the verdict from the score.
 - **Seniority is under-weighted.** A role asking for 6+ years is judged on skills alone and lands at
   partial. The one attempt to fix it was inconclusive because of the variation above.
 - **One label is debatable.** 1Password's finance analyst role was labelled strong, but the documents
