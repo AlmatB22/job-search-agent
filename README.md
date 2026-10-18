@@ -70,6 +70,7 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
 
 | Date | Commit | Postings | Result |
 | --- | --- | --- | --- |
+| 2026-10-17 | 934e4e6 | 14 × 3 runs (years of experience counted in the verdict, retried) | Verdict 12/14 · Stable 12/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s. Kept: the 6+ year staff role moved to poor (2/3, mean score 47 to 33) and no passing posting regressed |
 | 2026-10-17 | 36fd41b | 14 × 3 runs (repeat runs; verdict derived from the score) | Verdict 11/14 · Stable 13/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.034 · avg 14 s. Misses are consistent: Bevi poor 3/3, 1Password partial 3/3, Jane staff partial 3/3 |
 | 2026-10-17 | 0c0989a | 14 (baseline prompt again, corrected key) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s. AssetWatch and Bevi were poor again with the original prompt, so the previous drop was run-to-run variation, not the rule. Single runs can't separate changes from noise on borderline postings |
 | 2026-10-17 | 193611e | 14 (years of experience counted in the verdict; AssetWatch key terms fixed) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · avg $0.033 · avg 13 s. AssetWatch and Bevi fell to poor; the rule was reverted, but see the 0c0989a row |
@@ -83,10 +84,13 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
   can't show whether a prompt change helped; repeated runs are needed.
 - **Score and verdict used to disagree** (a score of 38 labelled partial). Fixed: the guard now derives
   the verdict from the score.
-- **Seniority is under-weighted.** A role asking for 6+ years is judged on skills alone and lands at
-  partial. The one attempt to fix it was inconclusive because of the variation above.
-- **One label is debatable.** 1Password's finance analyst role was labelled strong, but the documents
-  don't show window functions, star schemas or finance data. The matcher's partial (55-66) is defensible.
+- **Seniority is weighed coarsely.** Years of experience now count in the verdict, which moved the 6+ year
+  staff role to poor, but only 2 of 3 runs agree. That measured gain is one posting.
+- **Two labels are debatable, and the misses there are consistent.** 1Password's finance analyst role was
+  labelled strong, but the documents don't show window functions, star schemas or finance data; the matcher
+  says partial on every run (55-68). Bevi was labelled partial, but it asks for 3-5 years as a BA plus
+  NetSuite/ERP and B2B CRM experience; the matcher says poor on every run (30). The answer key is kept as
+  written, and these are recorded here instead.
 - **Keyword retrieval misses word forms** ("develop" doesn't match "development"); see
   `docs/design-notes.md`.
 

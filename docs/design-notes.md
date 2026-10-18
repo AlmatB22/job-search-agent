@@ -200,3 +200,15 @@ Choices inside the eval:
   score is the finer-grained signal, so code maps it to a label and the two
   can't contradict each other. This is the same rule as the citation guard:
   code enforces what the prompt only asks for.
+
+## Years of experience in the verdict (kept, on the second try)
+
+- **Decision:** when a posting states years of experience, the matcher adds an
+  evidence item for it. Full-time roles count in full; co-ops, internships, courses
+  and projects count for less. It weighs like a must-have.
+- **History:** the first single-run attempt seemed to cause a regression, and I
+  reverted it. Rerun with three runs per posting, it moved the 6+ year staff role
+  from partial (3/3) to poor (2/3) and broke nothing: 11/14 became 12/14.
+- **Lesson for an interview:** "My first conclusion about this change was wrong,
+  because I'd measured it once. With repeated runs the same change was a clear
+  improvement. Now no prompt change is judged on a single run."
