@@ -1,0 +1,103 @@
+Staff Product Data Analyst
+Jane · Canada/US
+Source: https://jobs.ashbyhq.com/jane/50006239-8506-4b56-b78c-a8c1114bd2da
+Retrieved: 2026-10-17
+
+ABOUT THE ROLE
+
+We're rebuilding how we manage data and analytics at Jane. Our goal is to establish a trusted data foundation that powers self-service analytics, AI, and consistent business metrics across the company.
+
+This role is focused on Product Analytics—but not in the traditional sense of generating insights or building dashboards. Instead, you'll focus on building the technical foundation that enables Product teams to answer their own questions with confidence.
+
+You'll partner closely with Engineering, Product, and Growth to improve product instrumentation, build scalable dbt models, standardize business logic, and create governed datasets that power reporting, experimentation, and AI. You'll also help establish the standards for how product data is modeled, tested, documented, and maintained as our analytics platform continues to evolve.
+
+If you enjoy solving complex technical problems, building scalable data foundations, and enabling others through trusted data, this role is a great fit.
+
+
+
+
+WHAT IMPACT WE’RE LOOKING FOR YOU TO MAKE
+
+ - Build and maintain the product analytics data foundation that powers reporting, self-service, experimentation, and AI.
+
+ - Partner with Engineering to define, implement, and validate product instrumentation before new features are released.
+
+ - Design and maintain scalable dbt models that transform raw product events into trusted analytical datasets.
+
+ - Build semantic models, standardized business logic, and governed metric definitions that ensure consistent product metrics across dashboards, self-service, and AI.
+
+ - Develop certified datasets that power modern analytics and visualization platforms such as Looker, Omni, Hex, and similar technologies.
+
+ - Partner with Product Managers to translate business requirements into scalable, trusted, and reusable analytical data models.
+
+ - Monitor product data pipelines, identify instrumentation gaps and data quality issues, and implement scalable, long-term improvements.
+
+ - Continuously improve how product data is modeled, governed, documented, and consumed across the analytics platform.
+
+ - Leverage AI to accelerate analytics engineering workflows, including data modeling, testing, documentation, and code development.
+
+
+WHAT EXPERIENCE WE NEED
+
+ - 6+ years of experience in Product Data Analyst, Analytics Engineering, or a similarly technical data role within a SaaS or high-growth technology company.
+
+ - Expert-level SQL skills and deep experience designing scalable analytical data models, with a strong understanding of data architecture and query performance optimization.
+
+ - 6+ years of experience building, deploying, and maintaining dbt projects in production environments.
+
+ - Experience modeling behavioral product data and building event-driven analytical datasets.
+
+ - Experience partnering with Engineering teams to define product instrumentation requirements and improve the quality and reliability of product event data.
+
+ - Experience working with Customer Data Platforms (CDPs) such as Segment or RudderStack.
+
+ - Experience designing semantic models, reusable business logic, governed datasets, and trusted metric definitions that enable consistent analytics across multiple consumption layers.
+
+ - Experience implementing data quality testing, documentation, observability, and governance best practices.
+
+ - Experience building or supporting modern analytics and visualization platforms such as Looker, Omni, Hex, Sigma, or similar technologies.
+
+ - Strong understanding of how semantic models and governed metrics are consumed across dashboards, self-service analytics, and AI experiences.
+
+ - Experience working with modern cloud data platforms such as Snowflake, BigQuery, or Redshift.
+
+ - Experience using AI tools such as Cursor, Claude Code, or similar technologies to improve analytics engineering workflows.
+
+ - Strong communication skills and the ability to partner effectively with Engineering, Product, Analytics, and business stakeholders.
+
+If you don’t meet every single qualification but are excited about this role, we’d still love to hear from you.
+
+
+
+
+MORE ABOUT JANE
+
+Jane is a founder-led, high-growth SaaS company with a remote-first team working across Canada, the US, and the UK, united by our mission to help the helpers. This role is remote first. We are not hybrid.
+
+We build the products and tools that thousands of clinics rely on every day to run their businesses, care for their patients, and grow their communities. That level of impact means every person at Jane plays an important role in how we show up for our customers. We're all responsible for being deeply connected to their needs, obsessed with improving their experience, and proud of the difference our work makes in their day-to-day lives.
+
+Jane is growing fast, and that growth brings exciting challenges that call for adaptability, resilience, learning agility, and humility. We're proud of what we've built and quick to admit what we don't know yet. We listen, learn, and adjust as we go. More than 70,000 businesses run on Jane which has 250,000+ practitioners interacting with our product on a daily basis and growth is continuing to accelerate.
+
+Our goal isn't just delivery - it's delight. We move quickly, communicate openly, and solve real problems together. If you're energized by ambiguity, motivated by impact, and eager to learn with others, you'll thrive at Jane.
+
+
+
+
+COMPENSATION & BENEFITS
+
+At Jane, we believe in paying fairly, clearly, and for growth. Our salary bands are intentionally wide — reflecting the full journey someone takes in a role, with real room to grow as your impact deepens over time.
+
+Most new hires join at the accomplished stage, with salaries above that typically reflecting existing team members who've made significant impact and built deep Jane-specific knowledge. For this role, accomplished looks like:
+
+ - 🇨🇦 Canada: $125,200 – $195,600 (accomplished: ~$148,700 CAD)
+
+ - 🇺🇸 United States: $116,800– $182,500 USD (accomplished: ~$138,700)
+
+This role also includes equity through our JSOP (Jane Stock Option Plan). Our stock has grown 11x over the past six years, with three opportunities to exercise options along the way. Jane was valued at $1.8B in May 2025, and with the backing of TCV https://betakit.com/jane-software-to-be-reportedly-valued-at-1-8-billion-in-upcoming-secondary-financing/, we have ambitious plans ahead.
+
+You can explore our benefits package here: Canadian Benefits https://jane.app/documents/hiring/jane_benefits_overview.pdf · US Benefits https://www.notion.so/janeapp/US-Benefits-Candidate-Facing-319378ecd68380838032d1cd0224351d
+
+We look forward to hearing from you.
+
+
+Jane takes job scams and candidate fraud seriously. Jane will only contact you from an @jane.app http://jane.app email address. We'll never contact you from a personal email, ask for payment, or request purchases during the hiring process. If something doesn't seem right, please reach out to us at hiring@jane.app before sharing any personal information.

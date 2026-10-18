@@ -1,0 +1,75 @@
+Senior Data Analyst
+Jane · Canada/US
+Source: https://jobs.ashbyhq.com/jane/a00a85b2-deb7-49e9-94d6-be9bf29b95e7
+Retrieved: 2026-10-17
+
+ABOUT THE ROLE
+
+We're rebuilding how we manage data and analytics at Jane. Our goal is to establish a trusted data foundation that powers self-service analytics, AI, and consistent business metrics across the company.
+
+This role is great for someone who thrives in a fast-paced environment, is comfortable navigating ambiguous business questions, and brings a strong sense of ownership and attention to detail. You’ll collaborate closely with stakeholders to define requirements, validate logic, and deliver high-quality data products that guide critical financial decisions.
+
+At Jane, we value transparency, ownership, and a problem-solving mindset. If you love working with data, care deeply about accuracy, and enjoy partnering with Finance and Payments to drive impact, this role is for you.
+
+
+
+THE IMPACT YOU COULD HAVE
+
+ - Partner closely with the Finance and Payments teams to build, refine, and maintain the metrics, models, and dashboards that power Jane’s financial reporting.
+
+ - Own end-to-end analysis: from understanding business questions → writing SQL/dbt models → building Looker dashboards → sharing insights clearly with stakeholders.
+
+ - Develop and optimize Looker dashboards to support financial planning, revenue analysis, cost insights, and transaction-level reporting.
+
+ - Maintain and evolve core financial data models in dbt.
+
+ - Troubleshoot data quality issues, validate calculations, and ensure trusted, reconciled datasets that Finance and Payments can rely on.
+
+ - Work with ambiguous requirements, identify gaps, ask the right questions, and translate business needs into clear technical solutions.
+
+ - Support the modernization of our data architecture by applying our best practices in modeling, documentation, QA, and performance tuning.
+
+ - Collaborate with cross-functional partners across Product, Support, and Marketing when financial data intersects or is needed.
+   
+
+
+THE EXPERIENCE WE FEEL WE NEED
+
+ - 5+ years experience as a Data Analyst or BI Analyst in a high-growth or complex product environment.
+
+ - Strong hands-on experience with SQL, dbt, and Looker, able to write complex queries, model data, and build insightful dashboards.
+
+ - Excellent communication skills, able to explain technical topics and financial logic to non-technical audiences.
+
+ - Ability to take initiative and ownership, work independently, and drive projects from concept to delivery.
+
+ - High attention to detail, especially with reconciliation, financial logic, metric definitions, and QA.
+
+ - Experience working with stakeholders in Finance (FP&A, Accounting, Payments, Revenue Ops).
+
+ - Experience with GitHub/version control.
+   
+
+
+MORE ABOUT JANE
+
+Jane is a founder-led, high-growth SaaS company with a remote-first team working across Canada, the US, and the UK, united by our mission to help the helpers.
+
+We build the products and tools that thousands of clinics rely on every day to run their businesses, care for their patients, and grow their communities. That level of impact means every person at Jane plays an important role in how we show up for our customers. We're all responsible for being deeply connected to their needs, obsessed with improving their experience, and proud of the difference our work makes in their day-to-day lives.
+
+Jane is growing fast, and that growth brings exciting challenges that call for adaptability, resilience, learning agility, and humility. We're proud of what we've built and quick to admit what we don't know yet. We listen, learn, and adjust as we go. More than 70,000 businesses run on Jane which has 250,000+ practitioners interacting with our product on a daily basis and growth is continuing to accelerate.
+
+Our goal isn't just delivery - it's delight. We move quickly, communicate openly, and solve real problems together. If you're energized by ambiguity, motivated by impact, and eager to learn with others, you'll thrive at Jane.
+
+Compensation & Benefits
+
+At Jane, we’re committed to paying fairly, clearly, and above all, paying for growth. This role has an annual salary range of $100,000 to $156,300. While that is a large range, it is intentional. It reflects the full growth journey someone might take in the role, from developing skills early on to becoming highly proficient and ultimately achieving excellence.
+
+We believe in paying for growth. You’ll have regular career development conversations with your manager and your compensation will grow as you gain experience and contribute meaningfully to our mission.
+
+Paying clearly is one of our compensation fundamentals. Watch this https://vimeo.com/880258361 short video to learn how our salary bands are set. You’re also encouraged to ask questions about compensation at any point during the interview process.
+
+We also offer a comprehensive benefits package, You can learn more about it here https://jane.app/documents/hiring/jane_benefits_overview.pdf!
+
+
+Jane takes job scams and candidate fraud seriously. Jane will only contact you from an @jane.app http://jane.app email address. We'll never contact you from a personal email, ask for payment, or request purchases during the hiring process. If something doesn't seem right, please reach out to us at hiring@jane.app before sharing any personal information.

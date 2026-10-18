@@ -1,0 +1,112 @@
+Senior Business Systems Analyst
+Commvault · United States
+Source: https://job-boards.greenhouse.io/commvault/jobs/5444266008
+Retrieved: 2026-10-17
+
+Recruitment Fraud Alert
+
+We’ve learned that scammers are impersonating Commvault team members—including HR and leadership—via email or text. These bad actors may conduct fake interviews and ask for personal information, such as your social security number.
+
+What to know:
+
+- Commvault does not conduct interviews by email or text.
+
+- We will never ask you to submit sensitive documents (including banking information, SSN, etc) before your first day.
+
+- Commvault recruiters may contact prospective candidates through LinkedIn and other professional networking platforms regarding career opportunities. If you are unsure whether a recruiting communication is legitimate, review the profile to ensure they have a badge verifying them as a Commvault employee.
+
+If you suspect a recruiting scam, please contact us at wwrecruitingteam@commvault.com
+
+About Commvault
+
+Commvault (NASDAQ: CVLT) is the gold standard in cyber resilience. The company empowers customers to uncover, take action, and rapidly recover from cyberattacks – keeping data safe and businesses resilient. The company’s unique AI-powered platform combines best-in-class data protection, exceptional data security, advanced data intelligence, and lightning-fast recovery across any workload or cloud at the lowest TCO. For over 25 years, more than 100,000 organizations and a vast partner ecosystem have relied on Commvault to reduce risks, improve governance, and do more with data.
+
+Senior Business Systems Analyst, NetSuite
+
+The Senior Business Systems Analyst, NetSuite provides senior, hands-on functional and technical leadership for NetSuite and its connected financial systems. The role partners with Finance, Accounting, Revenue Operations, Business Applications, Enterprise Architecture, Security, and external vendors to translate business outcomes into scalable processes, trusted data, compliant controls, and reliable solutions across Invoice-to-Cash, Procure-to-Pay, and Record-to-Report. This position is central to protecting month-end, quarter-end, and year-end close continuity while reducing dependency on external support.
+
+Key Responsibilities
+
+- Business Partnership: Partner with Finance and Accounting leaders to define outcomes, clarify requirements, challenge assumptions, prioritize demand, and connect local decisions to upstream and downstream impacts.
+
+- Process and Solution Design: Lead discovery, current- and future-state mapping, requirements definition, functional design, and solution options across Invoice-to-Cash, Procure-to-Pay, and Record-to-Report.
+
+- NetSuite Expertise: Configure and optimize roles, permissions, workflows, custom records, saved searches, reports, dashboards, forms, approvals, SuiteAnalytics, and related capabilities using maintainable design standards.
+
+- Technical Delivery: Translate business needs into clear functional and technical specifications; partner with developers and administrators on SuiteFlow, SuiteScript, SuiteCloud Development Framework, APIs, integrations, and data migrations.
+
+- Close-Cycle Continuity: Provide active support during month-end, quarter-end, and year-end close; monitor critical jobs and integrations; diagnose transaction, foreign exchange, reconciliation, reporting, and performance issues; and coordinate timely resolution.
+
+- Integration and Data Integrity: Own functional design and validation of data flows between NetSuite and connected CRM, billing, banking, procurement, tax, payroll, reporting, and planning platforms.
+
+- Controls and Compliance: Embed segregation of duties, access controls, change controls, audit trails, reconciliations, and evidence requirements into solution design and delivery.
+
+- Delivery Artifacts: Produce high-quality business requirements, functional designs, process maps, data mappings, acceptance criteria, test plans, UAT scripts, release documentation, operating procedures, and support knowledge.
+
+- Release and Change Leadership: Assess NetSuite releases and vendor changes, coordinate regression testing and readiness, manage stakeholder communications, and support adoption.
+
+- Incident and Problem Management: Lead Tier 2–3 analysis for complex production issues, identify root causes, implement durable fixes, document known errors, and reduce repeat incidents.
+
+- AI and Intelligent Automation: Identify, evaluate, and deliver governed opportunities such as transaction matching, cash application, order intake, revenue-document review, accrual estimation, anomaly detection, and continuous control monitoring.
+
+- Vendor and Partner Coordination: Direct technical engagement with NetSuite, ACS, integration partners, and other vendors; maintain internal ownership of requirements, decisions, knowledge, and outcomes.
+
+- Mentorship and Standards: Coach BSAs and delivery partners, strengthen analysis practices, and promote reusable patterns, documentation, and architecture standards.
+
+Essential Skills and Experience
+
+- Bachelor’s degree in Information Systems, Finance, Accounting, Business, or a related field, or equivalent practical experience.
+
+- 7+ years of business systems analysis, ERP, financial systems, or related experience, including significant hands-on NetSuite responsibility in a complex enterprise environment.
+
+- Required expert-level functional knowledge of the full accounting lifecycle, including Accounts Payable, Accounts Receivable, General Ledger, Fixed Assets, Cash Management, Banking and Payments, Tax, Expense Management, Intercompany Accounting, Multi-Entity Consolidation, Foreign Currency, Revenue Accounting, Financial Reporting, and month-, quarter-, and year-end close.
+
+- Demonstrated hands-on knowledge of NetSuite’s core and advanced financial features and functionality, including chart of accounts and accounting periods; transaction processing and general ledger impact; journal entries; roles, permissions, and segregation of duties; workflows and approvals; saved searches; reports and dashboards; SuiteAnalytics; custom records and forms; audit trails; reconciliations; allocations; Multi-Book Accounting; SuiteTax; electronic payments; fixed asset management; consolidation; and close management.
+
+- Experience defining integrations and data flows using REST or SOAP APIs, web services, middleware or iPaaS platforms, file-based interfaces, and event-driven patterns.
+
+- Experience leading requirements, functional design, testing, UAT, release readiness, and production support across the full solution lifecycle.
+
+- Working knowledge of SOX controls, IT general controls, segregation of duties, audit evidence, and financial compliance requirements.
+
+- Strong analytical, facilitation, written communication, stakeholder management, and problem-solving skills.
+
+- Ability to operate calmly during close-cycle incidents, prioritize competing demands, and communicate business impact and recovery actions clearly.
+
+Preferred Skills and Experience
+
+- NetSuite certification or equivalent demonstrated expertise.
+
+- Experience with SuiteScript 2.x, SuiteCloud Development Framework, SuiteFlow, SuiteAnalytics Connect, SuiteQL, Advanced PDF, and NetSuite2.com data sources.
+
+- Experience with subscription, billing, revenue recognition, tax, banking, consolidation, intercompany, foreign exchange, and multi-subsidiary operations.
+
+- Experience with connected platforms such as Salesforce, Zuora, procurement tools, banking integrations, Solution 7, or financial planning and reporting solutions.
+
+- Required working knowledge of US GAAP and ASC 606, including performance obligations, transaction price and allocation, revenue arrangements and plans, deferred and unbilled revenue, revenue recognition and reclassification, contract modifications, forecasting, reporting, controls, and audit support; demonstrated ability to apply these requirements through NetSuite Advanced Revenue Management.
+
+- Experience using AI, machine learning, or intelligent automation in Finance with defined controls, governance, monitoring, and value measurement.
+
+- Experience in a global, publicly traded, SaaS, or technology company.
+
+You'll Love Working Here Because
+
+- Continuous professional development, product training, and career pathing.
+
+- An inclusive company culture.
+
+- A competitive compensation package and benefits.
+
+#LI-PK1
+#LI-Remote
+
+Thank you for your interest in Commvault. Reflected below is the minimum and maximum base salary range for this role. At Commvault we use broad salary ranges in our job postings to reflect the diverse levels of expertise and experience among our candidates and is not reflective of the total compensation and benefits package. The specific salary offered will be determined based on your unique qualifications, including your relevant experience, skills, and the value you bring to the role. While the range provides a general idea of the compensation, it is important to note that placements within the range are not automatic and will be carefully considered to ensure a fair and competitive offer. We are committed to rewarding talent and experience.
+
+Pay Range
+$72,250—$177,100 USD
+
+Commvault is an equal opportunity workplace and is an affirmative action employer. We are always committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status and we will not discriminate against on the basis of such characteristics or any other status protected by the laws or regulations in the locations where we work.
+
+Commvault’s goal is to make interviewing inclusive and accessible to all candidates and employees. If you have a disability or special need that requires accommodation to participate in the interview process or apply for a position at Commvault, please email accommodations@commvault.com For any inquiries not related to an accommodation please reach out to wwrecruitingteam@commvault.com.
+
+Commvault's Privacy Policy

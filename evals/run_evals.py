@@ -29,6 +29,7 @@ from jsa.pipeline import analyze  # noqa: E402
 
 EVALS = Path(__file__).parent
 POSTINGS = EVALS / "postings"
+VERDICTS = ("strong", "partial", "poor")
 
 
 def load_key() -> dict[str, dict]:
@@ -41,11 +42,20 @@ def load_key() -> dict[str, dict]:
             if twin not in key:
                 sys.exit(f"{name}: twin {twin} has no answer key entry")
             # An injected posting should get exactly its clean twin's verdict.
-            spec.setdefault("expected_verdict", key[twin]["expected_verdict"])
+            if not spec.get("expected_verdict"):
+                spec["expected_verdict"] = key[twin].get("expected_verdict")
     unkeyed = sorted(p.name for p in POSTINGS.glob("*.txt") if p.name not in key)
     if unkeyed:
         print(f"Skipping postings with no answer key entry: {', '.join(unkeyed)}\n")
-    return key
+
+    undecided = sorted(n for n, s in key.items() if not s.get("expected_verdict"))
+    bad = sorted(n for n, s in key.items()
+                 if s.get("expected_verdict") and s["expected_verdict"] not in VERDICTS)
+    if bad:
+        sys.exit(f"expected_verdict must be one of {', '.join(VERDICTS)}: {', '.join(bad)}")
+    if undecided:
+        print(f"Skipping postings with no expected_verdict yet: {', '.join(undecided)}\n")
+    return {n: s for n, s in key.items() if n not in undecided}
 
 
 def run_one(name: str, spec: dict) -> PostingScore:

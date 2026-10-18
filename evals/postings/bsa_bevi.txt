@@ -1,0 +1,120 @@
+Senior Business Systems Analyst
+Bevi · Boston
+Source: https://job-boards.greenhouse.io/bevicareers/jobs/4328259009
+Retrieved: 2026-10-17
+
+Bevi is on a mission to transform how beverages are delivered and consumed. Our connected beverage platform eliminates the need for single-use bottles and cans, making it easy, fun, and sustainable to stay hydrated. As the category leader in IoT-enabled beverage technology, we're building a future where Bevi machines are everywhere people live, work, and connect. We've raised over $160M in venture capital, serve thousands of customers across the US, Canada, UK and Ireland, and we've been rapidly growing year over year, saving over 1 billion bottles from waste. In addition to driving hypergrowth with our current product line, Bevi is heavily investing in new product development.
+
+We are seeking a Business Systems Analyst to join our Enterprise Applications team. This role will partner closely with the Logistics, product and other teams to implement new software & deliver improvements to existing systems.
+
+An ideal candidate will have excellent communication, technical system design, and process analysis skills. They will have experience working closely with operations teams to analyze and improve their processes – taking a keen eye to eliminating inefficiencies, reducing errors, and smoothing out processes. They will have experience designing and implementing new processes that involve enhancing enterprise software systems, as well as finding the flaws in those processes, then developing and iterating on improvements to them.
+
+What you will do:
+
+- Own the relationship with assigned cross functional partner departments
+
+- Manage prioritization, requirements and the overall technology roadmap for assigned functional areas.
+
+- Responsible for guiding all system changes in assigned functional areas through the software development life cycle, end-to-end.
+
+- Produce requirements documents, process & system diagrams, documentation of technical solution designs.
+
+- Design, write, and execute QA test cases for system changes. Conduct UAT with stakeholders.
+
+- Work closely with technical domain experts on the applications team to design and implement system changes which solve business problems. Deliver changes which improve efficiency, internal & external user experiences, customer satisfaction, and financial performance.
+
+- Perform some system configuration and integration development.
+
+- Use AI tools to improve and accelerate delivery of system changes. Incorporate AI into personal workflows where valuable.
+
+- Work closely with external partners, vendors, consulting firms, and 3PL warehouses.
+
+Requirements:
+
+- 3-5 years of progressive experience as a Business Analyst, Solutions consultant, Process analyst, or another technical/functional role in which you have experience working directly with both business users and technical staff to solve business problems.
+
+- Extremely proficient in process analysis, process documentation, and organizational change management.
+
+- Self motivated, must have the ability to analyze a large complex problem, break it down into incremental deliverables, then execute against those deliverables without close oversight or supervision.
+
+- Familiarity with B2B CRM data archictecture
+
+- Excellent written and verbal communication skills. This role will interface with all areas of the business, and must be able to communicate and express their ideas clearly, confidently, and concisely with appropriate context whether working with a business user or executive stakeholder.
+
+- Strong understanding of relational database concepts, some SQL programming experience
+
+- Some familiarity with custom API integrations, EDI, Data Warehousing.
+
+- Experience with Netsuite ERP or the Warehouse/Inventory management module of a similarly full featured ERP system.
+
+- Experience working with operations managers to design customizations to an ERP, related to that team's processes. Ie: Logistics, Warehouse Operations, Inventory management.
+
+- Familiarity with agile software delivery methodologies: sprint planning, backlog grooming, story pointing. Using Jira or similar tools.
+
+Preferred Experience
+
+- Netsuite ERP
+
+- Warehouse Management Systems, Transportation Management Systems
+
+- iPaas development experience
+
+- Experience configuring and using Claude Code (or similar tools) to deliver ERP customizations – or to write code in other applications
+
+- Salesforce CRM
+
+- Zendesk or other Ticket Management platforms
+
+- Shopify B2B or other ecommerce platform
+
+#LI-CD1
+
+#LI-HYBRID
+At Bevi, we believe compensation is a powerful tool to attract, retain, and grow talent. Our Compensation Philosophy centers on 5 principles:
+
+- Market-driven - We anchor pay decisions in real-time market data
+
+- Performance-based - We reward individual impact, not just tenure
+
+- Equitable - We ensure fairness across teams, roles, and demographics
+
+- Growth-focused - We invest in talent that scales with Bevi
+
+- Total Rewards approach - We strategically balance base pay, bonuses, benefits, and equity
+
+The posted compensation range reflects the salary* for this position. Some roles may be eligible for a commission plan or a bonus incentive. All Bevi employees receive equity in the form of stock options. All full-time employees are invited to participate in our Total Rewards plan, which includes health & medical benefits, flexible spending accounts, flexible PTO, and more. Offers to join Bevi are based on a few criteria, including the scope of the role, the candidate's work experience, targeted skills, internal equity of the team, and external market data.
+
+*For Sales roles: The posted range reflects base salary plus commission which is the total potential on target earnings (OTE) for the position.
+
+Pay Range
+$109,650—$135,450 USD
+
+Benefits:
+
+- Comprehensive medical, dental and vision insurance plans with BlueCross BlueShield, 95% paid by employer
+
+- 401(k) with company match
+
+- Flexible PTO plus 12 company holidays, and additional paid days for sick leave, etc
+
+- Generous fully paid parental leave for both birth parents and non-birth parents
+
+- Fully employer paid disability and life insurances
+
+- Wellness and fitness reimbursements
+
+- Monthly stipends for cell phone use and commuting costs
+
+- Onsite snacks, weekly catered lunch, and (of course) unlimited Bevi ... plus composting and terra-cycling, too
+
+- Happy hours, team-building events, bagel breakfasts, Values awards - and more.
+
+A note on AI in our hiring process: We use AI to help synthesize interview notes and surface themes from feedback, keeping our process consistent as we grow. Every application is reviewed by a member of our team, and interviews may be recorded to support note-taking, just let us know if you'd prefer we don't. We'll also ask how you're learning and experimenting with AI in your work. Growing our AI fluency is something every Bevi team member is committed to and invested in.
+
+Our commitment to responsible innovation is reflected in our partnership with the Mass AI Coalition, a collaboration that aligns with our dedication to community-driven progress and the future of technology.
+
+We're passionate about supporting career growth and would love to be part of your professional journey. We also know that talent comes in many forms. We value individual accomplishments, specialized knowledge, and genuine passion over simply checking boxes on a requirements list. Whether you're a seasoned expert or an emerging talent, we're looking for people who are ready to build what's next. If any of our open positions interest you, we'd encourage you to apply! A member of the Bevi Talent team 'recruiting@bevi.co' will be reaching out about next steps if we would like to move forward.
+
+Accommodations:
+
+Bevi is committed to an inclusive hiring process and we aim to provide accommodations for persons with disabilities. If you need any accommodations for the application or throughout the interview process please contact recruiting@bevi.co.

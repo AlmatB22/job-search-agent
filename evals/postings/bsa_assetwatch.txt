@@ -1,0 +1,67 @@
+Salesforce Business Systems Analyst
+AssetWatch · Remote
+Source: https://job-boards.greenhouse.io/assetwatch/jobs/4734571005
+Retrieved: 2026-10-17
+
+AssetWatch serves global manufacturers by powering manufacturing uptime through the delivery of an unparalleled condition monitoring experience, with a passion to care about the assets our customers care for every day. We are a devoted and capable team that includes world-renowned engineers and distinguished business leaders united by a common goal – To build the future of predictive maintenance. As we enter the next phase of rapid growth, we are seeking people to help lead the journey.
+
+About the role
+
+This role is the analytical and operational link between AssetWatch’s business stakeholders and the Revenue Systems delivery team. The right person brings genuine business analysis instincts — the ability to surface requirements, resolve competing priorities, and translate complex business needs into something a development team can execute — alongside the organizational discipline to keep a fast-moving sprint cadence on track.
+
+What's the opportunity
+
+Requirements Gathering and Business Analysis
+
+You will lead structured discovery sessions with stakeholders across Revenue Operations, Sales Operations, Marketing Operations, Customer Success Operations, Engineering, and Product — not just attending them but facilitating them. That means surfacing unstated assumptions, identifying conflicting requirements before they reach development, and documenting what was agreed to with enough precision that the team can build from it without circling back. You will translate those conversations into well-formed user stories with clear acceptance criteria, evaluate solution options against real business constraints, and flag trade-offs before work begins.
+
+Stakeholder Alignment and Conflict Resolution
+
+Multiple teams will often bring competing priorities and different interpretations of what a system should do. You will own the alignment work — getting the right people in the room, making trade-offs visible, and resolving conflicts before they become delivery delays. That includes keeping sprint commitments transparent to dependent teams and managing expectations proactively when scope or timelines need to shift. This role operates across many teams and inbound requests simultaneously — strong organizational habits and the ability to carry multiple priorities forward at once without losing momentum on any of them are part of what makes someone successful here.
+
+Process Improvement and UAT
+
+You will document current-state business processes, identify opportunities for automation and workflow improvement, and own the full UAT lifecycle for every enhancement before it reaches production. That means writing test scripts, coordinating business reviewers, triaging defects, and confirming sign-off before any deployment goes live.
+
+Sprint Operations and User Support
+
+You will manage the Jira backlog, run sprint planning and daily standups, follow up before sprint deadlines, and send action items and release notes after each deployment. You will also triage inbound Salesforce support requests through the team’s Slack channel, acknowledge requests promptly, route issues appropriately, and keep stakeholders informed throughout.
+
+What we're looking for
+
+- 3+ years in a BSA, Revenue Operations, or Salesforce-adjacent role in a B2B SaaS environment
+
+- Demonstrated experience facilitating requirements sessions and writing user stories with acceptance criteria
+
+- Comfortable navigating competing stakeholder priorities and resolving cross-team conflicts
+
+- Strong written communication with an instinct for documenting decisions and process
+
+- Proven organizational skills with the ability to manage multiple competing priorities simultaneously and maintain pace across all of them
+
+- Agile sprint management experience with Jira
+
+- Familiarity with Salesforce CPQ/NUE, NetSuite, or Boomi is a plus
+The base salary range for this full-time position is posted below, plus equity and benefits. Variable pay, bonuses, and other cash compensation will be discussed throughout the interview process.
+
+The salary range was determined by role, level, and location. Individual pay is determined by work location and additional factors, including job-related skills, experience, and relevant education or training. Your recruiter can share more about the specific salary range applicable to your location during the hiring process.
+
+AssetWatch Salary Range (US)
+$100,000—$119,580 USD
+
+What We Offer:
+AssetWatch is a remote-first company that puts people at the center of everything we do. We want our team members to thrive - that’s why we offer a range of benefits and perks designed to support your well-being, growth, and work-life balance.
+
+- Competitive compensation package including stock options
+
+- Flexible work schedule
+
+- Comprehensive benefits including retirement plan match
+
+- Opportunity to make a real impact every day
+
+- Work with a dynamic and growing team
+
+- Unlimited PTO
+
+We have a distributed team that works remotely across locations in the United States and Ontario, Canada. Collaboration within core working hours is required.

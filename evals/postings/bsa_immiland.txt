@@ -1,0 +1,77 @@
+Senior NetSuite Administrator / Business Systems Analyst (ERP & Integrations)
+Immiland Canada · Montreal
+Source: https://jobs.lever.co/immiland-canada-inc/5bb2c6c4-b4f4-4089-95c5-f9910ec5f0de
+Retrieved: 2026-10-17
+
+We are seeking a highly skilled and proactive Senior NetSuite Administrator / Business Systems Analyst to manage and optimize our ERP ecosystem. Based in Montreal, this role is responsible for the administration, configuration, and continuous improvement of NetSuite ERP, while supporting critical integrations and business processes across the organization.
+
+The role will focus on system configuration, reporting, workflow automation, and data integrity, ensuring NetSuite effectively supports operations across consumer goods,” big box” retail partners, and marketplace channels. The successful candidate will also manage and support integrations with key platforms including Workato (iPaaS), Orderful(EDI), Propel (PLM), and Akeneo (PIM) to ensure seamless data flow between systems.
+
+This is a hands-on, cross-functional role that bridges technology and business operations. The ideal candidate will work closely with finance, supply chain, product, and operations teams to analyze business requirements, implement system improvements, and drive automation and operational efficiency.
+
+
+Key Responsibilities :
+- NetSuite Administration & Optimization
+- Administer, configure, and maintain the NetSuite ERP platform, including roles,permissions, workflows, forms, and custom fields
+- Ensure system performance, stability, and data integrity across all NetSuite modules
+- Manage system updates, testing, documentation, and ongoing platformmprovementsReporting & Data Insights
+
+- Design and maintain saved searches, dashboards, and custom reports to support finance, operations, and leadership teams
+- Improve data visibility and reporting capabilities to support operational and strategic decision-making
+- Ensure consistency and accuracy of data across integrated systemsBusiness Systems Analysis
+
+- Partner with stakeholders across finance, operations, supply chain, and product teams to gather and document business requirements
+- Analyze business processes and recommend system enhancements,automation, and workflow improvements
+- Translate operational needs into scalable NetSuite solutionsIntegrations & Systems Management
+
+- Manage and support integrations between NetSuite and external platforms including is an asset:
+- Workato (integration automation / iPaaS)
+- Orderful (EDI platform for retail partners)
+- Propel (PLM system)
+- Akeneo (PIM system)
+- Charted (OCR) AP automation
+- Monitor system integrations, troubleshoot issues, and ensure reliable data synchronization between platformsRetail & Consumer Goods Operations Support
+
+- Support ERP processes related to big box retailers, EDI transactions, and marketplace operations
+- Assist with order management, inventory management, fulfillment workflows, and supply chain operations
+- Ensure system alignment with retail partner requirements and operational workflowsContinuous Improvement & Governance
+
+- Identify opportunities to improve system efficiency, automate manual processes, and enhance operational workflows
+- Maintain system documentation, training materials, and best practices
+- Support internal teams with training, troubleshooting, and system adoption
+
+Qualifications :
+- 5+ years of experience as a NetSuite Administrator, ERP Analyst, or BusinessSystems Analyst
+- Strong expertise in NetSuite administration, including configuration, workflows, roles, permissions, forms, and custom fields
+- Advanced experience with NetSuite saved searches, dashboards, and reporting
+- Experience managing ERP integrations and middleware platforms such as Workato or similar iPaaS tools
+- Familiarity with EDI platforms and retail integrations, preferably Orderful
+- Experience supporting consumer goods, retail, supply chain, or distribution businesses
+- Strong analytical, troubleshooting, and problem-solving skills
+- Ability to gather and translate business requirements into system solutions
+- Excellent communication and stakeholder management skills
+- Proficiency with Microsoft Office Suite, particularly Excel for data analysis
+- Knowledge of marketplace integrations (Amazon, Walmart, Shopify, etc.)
+- Exposure to SuiteScript, SuiteAnalytics, or NetSuite custom development
+- Experience supporting big box retail partners and EDI transactions (PO, ASN, invoices)
+- Experience working in high-growth consumer goods or retail environments
+
+Key Competencies :
+- 1.NetSuite ERP Administration & Optimization
+- Expertise in NetSuite configuration, workflows, roles, permissions, saved searches, dashboards, and system performance optimization.
+- 2. ERP Integrations & Systems Architecture
+- Ability to manage and support integrations between NetSuite and external platforms such as Workato, Orderful (EDI), Propel (PLM), and Akeneo (PIM).
+- 3. Business Systems Analysis
+- Strong capability to gather requirements, analyze business processes, and translate operational needs into scalable ERP and system solutions.
+- 4.Data Reporting & Analytics
+- Proficiency in building reports, dashboards, and data insights that support operational, financial, and strategic decision-making.
+- 5. Cross-Functional Collaboration & Problem Solving
+- Ability to work with finance, operations, supply chain, and technical teams to resolve system issues, improve processes, and drive continuous improvement.
+
+What We Offer:
+- A dynamic, inclusive, and collaborative work environment
+- Competitive salary and annual bonus structure
+- Flex days
+- Opportunities for professional growth in a stable and growing company.
+
+Please do not apply if you do not meet the listed requirements. Only qualified candidates will be considered. Advanced English level is mandatory.

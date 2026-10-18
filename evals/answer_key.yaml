@@ -20,6 +20,56 @@ dawson.txt:
   must_have_contains: [Python, JavaScript, LLM API, workflow automation]
   expected_verdict: partial
 
+# Postings collected from public employer job boards on 2026-10-17 (source URL at
+# the top of each file). The title and must-have terms are copied from each
+# posting's required qualifications. expected_verdict is left blank for you to
+# decide; the runner skips an entry until it has one.
+
+bsa_arcteryx.txt:
+  title_contains: Business Systems Analyst
+  must_have_contains: [requirements, ERP, agile]
+  expected_verdict:
+
+bsa_assetwatch.txt:
+  title_contains: Business Systems Analyst
+  must_have_contains: [Salesforce, user stories, Jira]
+  expected_verdict:
+
+bsa_bevi.txt:
+  title_contains: Business Systems Analyst
+  must_have_contains: [SQL, ERP, agile]
+  expected_verdict:
+
+bsa_commvault.txt:
+  title_contains: Business Systems Analyst
+  must_have_contains: [NetSuite, GAAP, ASC 606]
+  expected_verdict:
+
+bsa_immiland.txt:
+  title_contains: NetSuite
+  must_have_contains: [NetSuite, integration]
+  expected_verdict:
+
+da_1password_finance.txt:
+  title_contains: Data Analyst
+  must_have_contains: [SQL, data model, dashboard]
+  expected_verdict:
+
+da_jane_senior.txt:
+  title_contains: Data Analyst
+  must_have_contains: [SQL, dbt, Looker]
+  expected_verdict:
+
+da_jane_staff_product.txt:
+  title_contains: Data Analyst
+  must_have_contains: [SQL, dbt, data model]
+  expected_verdict:
+
+da_stackadapt.txt:
+  title_contains: Data Analyst
+  must_have_contains: [SQL, ETL, visualization]
+  expected_verdict:
+
 # Temporary twin until the poor-fit iOS posting exists; then copy that one instead
 # (see evals/postings/injection.txt).
 injection.txt:
