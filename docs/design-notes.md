@@ -273,3 +273,20 @@ Choices inside the eval:
   private network with no open ports. My documents are read-only to the tool server
   and invisible to the agent, and the tool server is non-root on a read-only
   filesystem."
+
+## Long postings in Telegram (found in the Phase 7 end-to-end test)
+
+- **What happened:** Telegram splits messages over 4,096 characters. Hermes waits
+  only 0.3 s for a continuation unless the first part is close to the limit, so the
+  Dawson posting reached the agent as two messages. The first half had no
+  requirements section; the pipeline still ran the matcher on nothing and saved a
+  meaningless 0/100 draft.
+- **Fix 1, in our code:** if parsing finds no required skills, the pipeline stops
+  before matching and saves nothing. The user gets a short explanation instead.
+  Only the cheap parse step is paid for.
+- **Fix 2, in configuration:** Hermes's Telegram adapter already joins split
+  messages. Its wait times are set by environment variables, so docker-compose sets
+  them to their maximums (2 s, and 4 s near the split point). Long messages arrive
+  about 2 s later; short ones keep the fast path.
+- **Lesson:** the eval fed postings from files, so it couldn't catch a transport
+  problem. Only the end-to-end test did.

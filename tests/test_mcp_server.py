@@ -56,3 +56,11 @@ def test_refuses_public_bind_without_allowed_hosts():
     assert settings.allowed_hosts == ["jsa-mcp:8000"]
     with pytest.raises(SystemExit):
         mcp_server.transport_security("0.0.0.0", "")
+
+
+def test_analyze_explains_a_cut_off_posting(monkeypatch):
+    def incomplete(_):
+        raise mcp_server.pipeline.IncompletePosting(mcp_server.pipeline.INCOMPLETE_MESSAGE)
+    monkeypatch.setattr(mcp_server.pipeline, "analyze", incomplete)
+    result, text = call("analyze_posting", {"posting_text": "first half"})
+    assert not result.is_error and "cut off" in text

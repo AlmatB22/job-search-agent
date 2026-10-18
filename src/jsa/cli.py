@@ -28,7 +28,10 @@ def main(argv: list[str] | None = None) -> None:
     if args.command == "analyze":
         from jsa import pipeline  # deferred: only these commands need the model client
 
-        print(pipeline.analyze(args.file.read_text(encoding="utf-8")).to_text())
+        try:
+            print(pipeline.analyze(args.file.read_text(encoding="utf-8")).to_text())
+        except pipeline.IncompletePosting as e:
+            raise SystemExit(str(e))
     elif args.command == "parse":
         from jsa.parse import parse_posting
 

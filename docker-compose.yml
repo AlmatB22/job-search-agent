@@ -37,6 +37,12 @@ services:
     image: nousresearch/hermes-agent:stable
     container_name: hermes
     command: gateway run
+    environment:
+      # Telegram splits messages over 4,096 characters, and a pasted posting often
+      # is. Wait the maximum allowed for the continuation, so both halves reach the
+      # agent as one message (defaults: 0.3 s, and 1.0 s near the split point).
+      HERMES_TELEGRAM_TEXT_BATCH_DELAY_SECONDS: "2.0"
+      HERMES_TELEGRAM_TEXT_BATCH_SPLIT_DELAY_SECONDS: "4.0"
     volumes:
       - ./hermes-data:/opt/data            # Hermes config, its own .env, sessions, logs
     security_opt: ["no-new-privileges:true"]

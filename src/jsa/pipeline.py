@@ -23,6 +23,17 @@ INJECTION_WARNING = (
 )
 
 
+class IncompletePosting(Exception):
+    """The parser found no required skills, so there is nothing to match against."""
+
+
+INCOMPLETE_MESSAGE = (
+    "I couldn't find any required skills in this text, so nothing was analyzed or saved. "
+    "It may be cut off: Telegram splits messages over 4,096 characters. "
+    "Send the full posting again, including its requirements section."
+)
+
+
 @dataclass
 class AnalysisResult:
     application_id: int
@@ -83,7 +94,10 @@ def analyze(posting_text: str, run_id: str | None = None) -> AnalysisResult:
     run_id = run_id or tracker.new_run_id()
 
     posting = parse_posting(posting_text, run_id=run_id)
-    chunks = retrieve.get_retriever(retrieve.docs_dir()).search(posting.must_have_skills)
+    if not posting.must_have_skills:
+        # A half-pasted posting would otherwise reach the matcher and be saved as a 0/100 draft.
+        raise IncompletePosting(INCOMPLETE_MESSAGE)
+    chunks =retrieve.get_retriever(retrieve.docs_dir()).search(posting.must_have_skills)
     report = match(posting, chunks, run_id=run_id)
     report, dropped = apply_guard(report, {c.id for c in chunks})
 

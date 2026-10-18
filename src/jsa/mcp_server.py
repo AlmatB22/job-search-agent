@@ -50,7 +50,10 @@ def analyze_posting(posting_text: str) -> str:
     if len(text) > MAX_POSTING_CHARS:
         return (f"Posting too long ({len(text):,} characters, limit {MAX_POSTING_CHARS:,}). "
                 "Paste only the job description.")
-    return pipeline.analyze(text).to_text()
+    try:
+        return pipeline.analyze(text).to_text()
+    except pipeline.IncompletePosting as e:
+        return str(e)
 
 
 @mcp.tool(annotations=ToolAnnotations(read_only_hint=False, destructive_hint=False, idempotent_hint=True))

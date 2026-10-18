@@ -27,3 +27,18 @@ def test_verdict_follows_score_thresholds():
     assert apply_guard(report(score=40), set())[0].verdict == "partial"
     assert apply_guard(report(score=74), set())[0].verdict == "partial"
     assert apply_guard(report(score=75), set())[0].verdict == "strong"
+
+
+def test_posting_without_requirements_stops_before_matching(monkeypatch):
+    import pytest
+    from jsa import pipeline, tracker
+    from jsa.schemas import Posting
+
+    half = Posting(title="AI Solutions Developer", company="Dawson Group", location=None,
+                   work_mode="hybrid", must_have_skills=[], nice_to_have_skills=[],
+                   years_experience=None, salary=None, contains_ai_instructions=False)
+    monkeypatch.setattr(pipeline, "parse_posting", lambda text, run_id: half)
+    monkeypatch.setattr(pipeline, "match", lambda *a, **k: pytest.fail("matcher must not run"))
+    with pytest.raises(pipeline.IncompletePosting):
+        pipeline.analyze("first half of a posting")
+    assert tracker.list_text() == "No applications yet."

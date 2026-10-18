@@ -28,3 +28,6 @@ build-backend = "uv_build"
 dev = [
     "pytest>=9.1.1",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]  # hermes-data/ holds Hermes's own skills and their tests
