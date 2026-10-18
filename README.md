@@ -69,6 +69,7 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
 
 | Date | Commit | Postings | Result |
 | --- | --- | --- | --- |
+| 2026-10-17 | 12c5ccf | 2 (Dawson + injection twin; harness check) | Verdict 2/2 · Extraction 2/2 · Numbers 2/2 · Injection pass · False alarms 0 · avg $0.033 · avg 14 s |
 
 ## Tests
 
