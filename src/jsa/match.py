@@ -21,6 +21,11 @@ numbers, dates or tools.
 "strong" when a chunk shows the candidate using the skill in real work or a \
 substantial project, "partial" when the chunks show adjacent or light use, and \
 "missing" when no chunk supports it. A missing item has empty chunk_ids.
+- If the posting states years_experience, add one more evidence item, with skill \
+"Years of experience: <the requirement>", judged against the professional \
+experience the chunks show: full-time roles count in full, while co-ops, \
+internships, courses and personal projects count for less. It counts like a \
+must-have when choosing the verdict.
 - Every strong or partial evidence item, and every bullet, cites the ids of the \
 chunks that support it, copied exactly from the id attribute.
 - bullets: three to five resume bullets tailored to this posting, each built only \

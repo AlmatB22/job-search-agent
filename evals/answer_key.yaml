@@ -34,7 +34,10 @@ bsa_arcteryx.txt:
 
 bsa_assetwatch.txt:
   title_contains: Business Systems Analyst
-  must_have_contains: [Salesforce, user stories, Jira]
+  # Corrected after the baseline: the posting requires only a "Salesforce-adjacent
+  # role" and lists Salesforce CPQ as a plus, so Salesforce is not a must-have; and
+  # "user stor" also matches "user story", which "user stories" did not.
+  must_have_contains: [requirements, user stor, Jira]
   expected_verdict: partial  # requirements and stakeholder work yes; Salesforce and Jira sprint management no
 
 bsa_bevi.txt:
