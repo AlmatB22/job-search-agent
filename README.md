@@ -134,6 +134,10 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
   says partial on every run (55-68). Bevi was labelled partial, but it asks for 3-5 years as a BA plus
   NetSuite/ERP and B2B CRM experience; the matcher says poor on every run (30). The answer key is kept as
   written, and these are recorded here instead.
+- **Bullets on poor fits are padding.** For a poor-fit posting the matcher still writes resume bullets
+  from weakly related chunks (for example, "camera-capture requirements included AVFoundation" for a
+  senior iOS role). Every bullet still cites a real chunk and states no unsupported numbers; they are
+  just low-value. A likely fix is to skip bullets when the verdict is poor.
 - **Keyword retrieval misses word forms** ("develop" doesn't match "development"); see
   `docs/design-notes.md`.
 
