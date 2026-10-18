@@ -1,3 +1,54 @@
-# Services: hermes + jsa-mcp.
-# Filled in when the MCP server and Hermes are wired together.
-services: {}
+# Two containers on one private network. Neither publishes a port to the Mac:
+# Telegram and the Claude API are outbound connections, and Hermes reaches the
+# tool server by its container name, jsa-mcp.
+name: job-search-agent
+
+services:
+  jsa-mcp:
+    build: .
+    container_name: jsa-mcp
+    env_file: .env                         # ANTHROPIC_API_KEY = the jsa-core key
+    environment:
+      JSA_DOCS_DIR: /data/my_docs
+      JSA_DB_PATH: /data/db/jsa.sqlite
+      JSA_MCP_HOST: 0.0.0.0                # listen on the private network...
+      JSA_MCP_ALLOWED_HOSTS: jsa-mcp:8000  # ...but only answer requests addressed to jsa-mcp
+    volumes:
+      - ./data/my_docs:/data/my_docs:ro    # read-only: nothing can change your documents
+      - ./data/db:/data/db                 # tracker and cost log
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 1g
+    cpus: 1.0
+    networks: [agent-net]
+    restart: unless-stopped
+    healthcheck:
+      # Any HTTP answer means the server is up (a 4xx without an MCP session is expected).
+      test: ["CMD", "python", "-c", "import urllib.request as u, urllib.error as e\ntry: u.urlopen('http://127.0.0.1:8000/mcp', timeout=3)\nexcept e.HTTPError: pass"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    # no ports: reachable only from inside agent-net
+
+  hermes:
+    image: nousresearch/hermes-agent:stable
+    container_name: hermes
+    command: gateway run
+    volumes:
+      - ./hermes-data:/opt/data            # Hermes config, its own .env, sessions, logs
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 4g
+    cpus: 2.0
+    networks: [agent-net]
+    depends_on:
+      jsa-mcp:
+        condition: service_healthy
+    restart: unless-stopped
+    # no ports: the chat-only gateway needs none
+    # Never mount /var/run/docker.sock or your home folder into either container.
+
+networks:
+  agent-net: {}

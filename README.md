@@ -63,6 +63,29 @@ There is deliberately no tool that deletes, emails or submits anything. The serv
 hand, run `npx @modelcontextprotocol/inspector` and connect to the URL above with the
 "Streamable HTTP" transport.
 
+## Run in Docker
+
+```sh
+mkdir -p data/db hermes-data
+docker compose build jsa-mcp
+docker compose up -d jsa-mcp
+docker compose ps                    # jsa-mcp "healthy", no published ports
+```
+
+Two containers share a private network, `agent-net`, and neither publishes a port to the host.
+Hermes reaches the tool server at `http://jsa-mcp:8000/mcp`. The tool server:
+
+| Risk | How it's contained |
+| --- | --- |
+| Changes to your documents | `data/my_docs` is mounted read-only; Hermes doesn't mount it at all |
+| Secrets or documents in the image | `.dockerignore` keeps `.env`, `data/` and `hermes-data/` out of the build |
+| Someone reaching the tool server | No published ports, and only requests addressed to `jsa-mcp:8000` are answered |
+| Privilege escalation | Non-root user (uid 10001), read-only filesystem, all capabilities dropped, `no-new-privileges` |
+| Runaway resource use | 1 CPU and 1 GB of memory for the tool server; 2 CPUs and 4 GB for Hermes |
+
+Neither container mounts the Docker socket or your home folder. Stop everything with
+`docker compose down`.
+
 ## Evaluation
 
 ```sh

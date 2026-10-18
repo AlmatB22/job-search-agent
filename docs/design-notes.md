@@ -242,3 +242,34 @@ Choices inside the eval:
 - **In an interview:** "The agent can only read, analyze and create drafts. Approval
   needs the user's explicit instruction, and nothing can send or delete, so even a
   successful prompt injection can't do real damage."
+
+## Docker (Phase 6)
+
+- **Decision:** two containers on one private network. The tool server is built
+  from this repo; Hermes uses its official image. Neither publishes a port: Telegram
+  and the Claude API are outbound connections, and Hermes reaches the tools by the
+  container name `jsa-mcp`.
+- **Why containers at all:** an agent that reads untrusted postings can be steered.
+  Inside a container it sees only its own data folder, not the Mac.
+- **Defence in depth on the tool server:** it runs as a non-root user with a fixed
+  uid, on a read-only filesystem (bytecode is precompiled at build, since Python
+  can't write it at runtime), with all Linux capabilities dropped,
+  `no-new-privileges`, and CPU and memory limits. The documents are mounted
+  read-only, and only the database folder is writable.
+- **Nothing sensitive in the image:** `.dockerignore` excludes `.env`, `data/`,
+  `hermes-data/`, `evals/` and `.git`. I checked the built image: only code and
+  dependencies, no `.env`, PDFs, notes or database. The key arrives at run time
+  through `env_file`.
+- **Reproducible builds:** uv is pinned to the Mac's version (0.9.28) and installs
+  from `uv.lock` with `--frozen`. Dependencies sit in their own layer, so a code change
+  rebuilds in seconds.
+- **Health check:** compose waits until the tool server answers HTTP before starting
+  Hermes. Any response counts, including the 421 the Host check gives the probe.
+- **Verified:** healthy; no published ports (unreachable from the Mac); by name, from
+  another container on `agent-net`, all three tools work and a full analysis ran
+  ($0.028, 15 s); by raw IP, 421; writes to the documents or the app filesystem
+  fail as read-only.
+- **In an interview:** "The agent and my tools run in separate containers on a
+  private network with no open ports. My documents are read-only to the tool server
+  and invisible to the agent, and the tool server is non-root on a read-only
+  filesystem."

@@ -1,0 +1,15 @@
+# Keep secrets, personal documents and local state out of the build context,
+# so they can never be baked into an image layer.
+.env
+.env.*
+!.env.example
+.git
+data/
+hermes-data/
+evals/
+tests/
+docs/
+.venv/
+**/__pycache__/
+*.sqlite
+.DS_Store
