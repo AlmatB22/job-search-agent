@@ -70,7 +70,7 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
 | Date | Commit | Postings | Result |
 | --- | --- | --- | --- |
 | 2026-10-17 | 0c0989a | 14 (baseline prompt again, corrected key) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s. AssetWatch and Bevi were poor again with the original prompt, so the previous drop was run-to-run variation, not the rule. Single runs can't separate changes from noise on borderline postings |
-| 2026-10-17 | 193611e | 14 (years of experience counted in the verdict; AssetWatch key terms fixed) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · avg $0.033 · avg 13 s. AssetWatch and Bevi fell to poor; the rule was reverted, but see the next row |
+| 2026-10-17 | 193611e | 14 (years of experience counted in the verdict; AssetWatch key terms fixed) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · avg $0.033 · avg 13 s. AssetWatch and Bevi fell to poor; the rule was reverted, but see the 0c0989a row |
 | 2026-10-17 | 9853431 | 14 (baseline: 10 clean + 3 poor + injection) | Verdict 12/14 · Extraction 13/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s |
 | 2026-10-17 | 12c5ccf | 2 (Dawson + injection twin; harness check) | Verdict 2/2 · Extraction 2/2 · Numbers 2/2 · Injection pass · False alarms 0 · avg $0.033 · avg 14 s |
 
