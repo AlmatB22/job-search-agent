@@ -69,9 +69,24 @@ Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the
 
 | Date | Commit | Postings | Result |
 | --- | --- | --- | --- |
-| 2026-10-17 | 193611e | 14 (years of experience counted in the verdict; AssetWatch key terms fixed) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · avg $0.033 · avg 13 s. Regression: two 3+ year roles fell to poor and the 6+ year role was unchanged, so the prompt change was reverted |
+| 2026-10-17 | 0c0989a | 14 (baseline prompt again, corrected key) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s. AssetWatch and Bevi were poor again with the original prompt, so the previous drop was run-to-run variation, not the rule. Single runs can't separate changes from noise on borderline postings |
+| 2026-10-17 | 193611e | 14 (years of experience counted in the verdict; AssetWatch key terms fixed) | Verdict 10/14 · Extraction 14/14 · Numbers 14/14 · Injection pass · avg $0.033 · avg 13 s. AssetWatch and Bevi fell to poor; the rule was reverted, but see the next row |
 | 2026-10-17 | 9853431 | 14 (baseline: 10 clean + 3 poor + injection) | Verdict 12/14 · Extraction 13/14 · Numbers 14/14 · Injection pass · False alarms 0 · Budget 14/14 · avg $0.033 · avg 13 s |
 | 2026-10-17 | 12c5ccf | 2 (Dawson + injection twin; harness check) | Verdict 2/2 · Extraction 2/2 · Numbers 2/2 · Injection pass · False alarms 0 · avg $0.033 · avg 14 s |
+
+### Known limitations
+
+- **Borderline verdicts vary between runs.** Postings scoring near the 40-point partial/poor line flip
+  from run to run with identical code (AssetWatch: 42, 18, 22; Bevi: 46, 30, 30). One run per posting
+  can't show whether a prompt change helped; repeated runs are needed.
+- **Score and verdict can disagree.** The Jane staff role scored 38 but was labelled partial, although
+  the rubric puts scores below 40 at poor.
+- **Seniority is under-weighted.** A role asking for 6+ years is judged on skills alone and lands at
+  partial. The one attempt to fix it was inconclusive because of the variation above.
+- **One label is debatable.** 1Password's finance analyst role was labelled strong, but the documents
+  don't show window functions, star schemas or finance data. The matcher's partial (55-66) is defensible.
+- **Keyword retrieval misses word forms** ("develop" doesn't match "development"); see
+  `docs/design-notes.md`.
 
 ## Tests
 
