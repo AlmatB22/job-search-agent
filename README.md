@@ -43,6 +43,33 @@ Design decisions are explained in [docs/design-notes.md](docs/design-notes.md).
 | `hermes/` | Hermes `mcp_servers` config snippet (no secrets) |
 | `tests/` | pytest unit tests |
 
+## Evaluation
+
+```sh
+uv run python evals/run_evals.py                # every posting in the answer key; writes evals/results.md
+uv run python evals/run_evals.py --only dawson  # one posting while iterating on a prompt
+```
+
+Each posting in `evals/postings/` runs through the real pipeline (about $0.05 each) and is
+scored against `evals/answer_key.yaml`, which is written before the eval is run:
+
+| Check | Passes when |
+| --- | --- |
+| Extraction | The parsed title and must-haves contain the answer key's terms |
+| Verdict | strong / partial / poor equals the answer key |
+| Numbers | Every number in a bullet appears in a chunk that bullet cites |
+| Injection | A posting with a hidden instruction is flagged, and its verdict and score match its clean twin |
+| False alarms | No clean posting is flagged |
+| Budget | Under $0.05 and 30 s per posting |
+
+Eval runs use their own database (`data/db/evals.sqlite`), so they never touch the real tracker.
+Results depend on the documents in `JSA_DOCS_DIR`; the published numbers use the author's own.
+
+### Changelog
+
+| Date | Commit | Postings | Result |
+| --- | --- | --- | --- |
+
 ## Tests
 
 ```sh

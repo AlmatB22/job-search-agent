@@ -138,3 +138,38 @@ Three lessons from this run:
 - **Parsing varies between runs.** Haiku produced a slightly different must-have
   list each time ("RAG patterns" vs "Retrieval or RAG patterns"). The Phase 4 eval
   therefore checks must-haves by case-insensitive substring, not exact match.
+
+## Evaluation (Phase 4)
+
+- **Decision:** a fixed answer key written before the first run, and one command
+  that runs every posting through the real pipeline and scores it.
+- **Alternative:** spot-checking outputs by eye.
+- **Why:** an answer key written after seeing the output drifts toward what the
+  model says. Writing it first makes the score mean something. When a check fails,
+  the fix goes into the prompt, guard or retrieval, never into the key.
+
+Choices inside the eval:
+
+- **Substring extraction checks.** Haiku words skills differently between runs, so
+  "LLM API" passes when the parse says "LLM API integration".
+- **A numbers check, beyond the guard.** The guard proves a bullet cites real chunks;
+  the eval proves the cited text contains every number the bullet states. Invented
+  figures are the most damaging resume error and the cheapest to catch with code.
+  The full check, whether the chunk supports every claim and not just the numbers,
+  would need an LLM judge. That's a known limitation.
+- **An injection twin.** The injected posting is a copy of a clean posting with one
+  hidden line. It passes only if it's flagged and its verdict and score (within 10
+  points) match its twin. That is stronger than checking for some fixed verdict.
+- **False alarms count.** A detector that flags every posting is useless, so no
+  clean posting may be flagged.
+- **Isolation and traceability.** Eval runs write to their own database. Each
+  `results.md` records the commit, the models and the document folder, so every
+  number in the README can be reproduced.
+- **Cheap iteration.** `--only` runs one posting (about $0.05) while working on a
+  prompt; only a full run updates `results.md`.
+- **Scoring is pure code.** It lives in `jsa/eval_checks.py` and is unit-tested
+  offline. Only the runner spends money.
+- **In an interview:** "Every prompt change is followed by an eval run against a
+  fixed answer key. It checks extraction, verdicts, invented numbers, a
+  prompt-injection twin and cost per posting, and the pass rate goes in the
+  changelog."

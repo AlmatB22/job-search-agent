@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from jsa import retrieve, tracker
 from jsa.match import match
 from jsa.parse import parse_posting
+from jsa.retrieve import Chunk
 from jsa.schemas import FitReport, Posting
 
 INJECTION_WARNING = (
@@ -25,6 +26,7 @@ class AnalysisResult:
     run_id: str
     posting: Posting
     report: FitReport
+    chunks: list[Chunk]  # what was retrieved, so the eval can check bullets against it
     dropped_bullets: int
     warnings: list[str]
     cost_usd: float
@@ -63,9 +65,10 @@ def apply_guard(report: FitReport, retrieved_ids: set[str]) -> tuple[FitReport, 
     return report.model_copy(update={"bullets": kept, "fit_score": score}), len(report.bullets) - len(kept)
 
 
-def analyze(posting_text: str) -> AnalysisResult:
+def analyze(posting_text: str, run_id: str | None = None) -> AnalysisResult:
+    """Run the whole pipeline. Pass `run_id` to look up the run's cost even if it fails."""
     t0 = time.monotonic()
-    run_id = tracker.new_run_id()
+    run_id = run_id or tracker.new_run_id()
 
     posting = parse_posting(posting_text, run_id=run_id)
     chunks = retrieve.get_retriever(retrieve.docs_dir()).search(posting.must_have_skills)
@@ -84,6 +87,7 @@ def analyze(posting_text: str) -> AnalysisResult:
         run_id=run_id,
         posting=posting,
         report=report,
+        chunks=chunks,
         dropped_bullets=dropped,
         warnings=warnings,
         cost_usd=tracker.run_cost(run_id),
