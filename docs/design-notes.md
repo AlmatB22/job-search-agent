@@ -116,3 +116,25 @@ posting.txt -> parse (Haiku 5.5) -> retrieve (BM25) -> match (Sonnet 5.5)
 The verdict was partial (42/100). LLM API integration, tool calling, structured
 outputs and RAG were all marked missing, and the guard dropped 0 bullets. Sonnet
 accounts for 98% of the cost, which is why parsing uses Haiku.
+
+## Second run: project notes and capstone added
+
+Adding `projects.md` and the capstone report took the corpus from 19 chunks to
+about 280. The same posting moved to 68/100 (still partial). LLM API integration,
+structured outputs, RAG and prompt-injection handling became strong, each citing the
+project notes. Tool calling stayed missing because the MCP server isn't built yet.
+The run cost $0.049 and took 26 s: the 20-chunk cap was reached, so Sonnet read
+more input.
+
+Three lessons from this run:
+
+- **Chunk boundaries matter.** At first a long Markdown section split into a
+  heading-only chunk and a body chunk without its heading. Now every chunk repeats
+  its section heading, so "ULES" travels with the text.
+- **BM25 has no stemming.** "AI-assisted development tools" was marked partial
+  because the chunk saying "I develop with Claude Code" never matched: "develop" is
+  not "development". This is the synonym and word-form gap, observed in practice, and
+  the case for embeddings or a stemmer.
+- **Parsing varies between runs.** Haiku produced a slightly different must-have
+  list each time ("RAG patterns" vs "Retrieval or RAG patterns"). The Phase 4 eval
+  therefore checks must-haves by case-insensitive substring, not exact match.

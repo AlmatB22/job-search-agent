@@ -80,19 +80,25 @@ def _pdf_chunks(path: Path) -> list[Chunk]:
 
 
 def _markdown_chunks(path: Path) -> list[Chunk]:
-    # Split into sections at headings; each section keeps its heading line as context.
-    sections: list[tuple[str, list[str]]] = [("intro", [])]
+    # Split into sections at headings. Every chunk of a section starts with the
+    # section's heading, so a long section's later chunks keep their context.
+    sections: list[tuple[str, str, list[str]]] = [("intro", "", [])]
     for line in path.read_text(encoding="utf-8").splitlines():
         m = _HEADING.match(line)
         if m:
-            sections.append((_slug(m.group(1)), []))
-        sections[-1][1].append(line)
+            sections.append((_slug(m.group(1)), line.strip(), []))
+        else:
+            sections[-1][2].append(line)
     chunks = []
     counts: dict[str, int] = {}
-    for slug, lines in sections:
-        for piece in _pack(_paragraphs("\n".join(lines))):
+    for slug, heading, body in sections:
+        paragraphs = _paragraphs("\n".join(body))
+        if not paragraphs:
+            continue  # a heading with nothing under it
+        for piece in _pack(paragraphs, CHUNK_CHARS - len(heading)):
             counts[slug] = counts.get(slug, 0) + 1
-            chunks.append(Chunk(f"{path.name}#{slug}-{counts[slug]}", path.name, piece))
+            text = f"{heading}\n{piece}" if heading else piece
+            chunks.append(Chunk(f"{path.name}#{slug}-{counts[slug]}", path.name, text))
     return chunks
 
 

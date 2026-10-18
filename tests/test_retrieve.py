@@ -29,3 +29,11 @@ def test_search_finds_skill_and_dedupes():
 def test_search_caps_results():
     retriever = Retriever(load_chunks("data/sample_docs"))
     assert len(retriever.search(["Python", "SQL", "Docker", "Airflow"], limit=2)) == 2
+
+
+def test_markdown_chunks_keep_heading(tmp_path):
+    body = "\n\n".join(["word " * 120] * 3)  # three ~600-char paragraphs
+    (tmp_path / "notes.md").write_text(f"# Title\n\n## Long section\n\n{body}\n")
+    chunks = load_chunks(tmp_path)
+    assert [c.id for c in chunks] == [f"notes.md#long-section-{n}" for n in (1, 2, 3)]
+    assert all(c.text.startswith("## Long section\n") for c in chunks)
