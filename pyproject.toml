@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Job search agent: posting parsing, fit matching and application tracking"
 readme = "README.md"
 authors = [
-    { name = "almatbolatbekov", email = "almat.bolatbek22@gmail.com" }
+    { name = "Almat Bolatbekov" }
 ]
 requires-python = ">=3.12"
 dependencies = [
