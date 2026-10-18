@@ -18,9 +18,13 @@ your own documents, set `JSA_DOCS_DIR=data/sample_docs`, which holds a made-up c
 ## Usage
 
 ```sh
-uv run jsa analyze posting.txt
-uv run jsa list
+uv run jsa analyze posting.txt   # parse, retrieve, match, guard; saves a draft
+uv run jsa approve 1             # approve draft #1
+uv run jsa list                  # recent applications with fit and status
 ```
+
+Run commands from the repo root: `JSA_DOCS_DIR` and `JSA_DB_PATH` are relative paths.
+Design decisions are explained in [docs/design-notes.md](docs/design-notes.md).
 
 ## Layout
 

@@ -1,11 +1,6 @@
-import sys
-
-import pytest
-
 from jsa import cli
 
 
-def test_list_command_parses(monkeypatch):
-    monkeypatch.setattr(sys, "argv", ["jsa", "list"])
-    with pytest.raises(SystemExit, match="not implemented"):
-        cli.main()
+def test_list_on_empty_db(capsys):
+    cli.main(["list"])
+    assert capsys.readouterr().out.strip() == "No applications yet."
