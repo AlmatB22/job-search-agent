@@ -77,7 +77,8 @@ def git_version() -> str:
     def git(*args):
         return subprocess.run(["git", *args], capture_output=True, text=True).stdout.strip()
 
-    dirty = git("status", "--porcelain", "src", "evals")
+    # results.md is this script's own output, so it doesn't count as a code change.
+    dirty = git("status", "--porcelain", "--", "src", "evals", ":!evals/results.md")
     return git("rev-parse", "--short", "HEAD") + (" (uncommitted changes)" if dirty else "")
 
 
