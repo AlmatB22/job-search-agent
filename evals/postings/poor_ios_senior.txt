@@ -1,0 +1,84 @@
+Senior iOS Engineer
+WeightWatchers · Canada - Remote
+Source: https://job-boards.greenhouse.io/ww/jobs/5195368008
+Retrieved: 2026-10-17
+
+Weight Watchers is the global leader in science-backed weight management, offering an integrated support system built for the GLP-1 era that combines scientific expertise, medication, cutting-edge technology, and human connection. With more than 60 years of experience, Weight Watchers is the most studied commercial weight management program in the world, delivered through its No. 1 U.S. doctor-recommended weight-loss program. Its holistic, personalized approach also includes U.S.-based clinical interventions and access to GLP-1 medications when clinically appropriate, and a global network of coaches and community support. Since 1963, the company has led with science to deliver its members the personalized support they need to reach and sustain their goals. Members can access these solutions directly, or through Weight Watchers for Business’ full-spectrum platform for employers, health plans, and payers. In a landscape crowded with contradictory advice, isolating apps, and one-size-fits-all solutions, Weight Watchers offers a proven path forward that is rooted in research, grounded in empathy and designed to help every member feel better in their body and live a longer, healthier life.
+
+Who We Are
+
+At WeightWatchers, our Engineering Team drives transformative change by leveraging technology to redefine how millions approach weight health and wellness. The team builds digital solutions that establish personalized connections and foster inclusive virtual communities, empowering members to adopt healthier habits and achieve lasting lifestyle changes. From pioneering a comprehensive telehealth platform, optimizing medication access, diving headfirst into exciting AI integrations we lead with data-driven innovations that revolutionize healthcare outcomes. Our culture thrives on urgency, collaboration, and a passion for impactful work that directly improves the lives of our members.
+
+What You’ll Do
+
+As a critical member of the Mobile Product Engineering team, you will:
+
+- Build and evolve key native features of the WeightWatchers iOS app that support members in their health journeys: food tracking, activity logging, weight trends, and our new AI-driven health insights.
+
+- Deliver premium UI/UX using modern Apple frameworks to ensure the app feels fast, fluid, and intuitive.
+
+- Collaborate closely with Product, Design, Data, and Behavioral Science teams to deliver features that support daily habit formation and medical weight-loss journeys (including our GLP-1 Med+ initiatives).
+
+- Own the implementation of upcoming flagship initiatives, including Lock Screen Widgets, Live Activities, and health data integrations.
+
+- Shape the architectural decisions and technical standards for our iOS application, ensuring a robust, modular, and testable codebase.
+
+- Operate with high autonomy and influence: proactively question assumptions, bring new ideas, and champion product quality and performance.
+
+Who You Are
+
+- Native iOS Expert: Deep experience in iOS development with Swift, with a solid grasp of SwiftUI, Combine (or Swift Concurrency), and MVVM/Clean Architecture.
+
+- Product-Minded Engineer: A passion for mobile product engineering—especially around improving member experience, usability, and long-term engagement.
+
+- Apple Ecosystem Enthusiast: Someone who keeps up with the latest WWDC updates and understands how to leverage the latest iOS capabilities to delight users.
+
+- Collaborative Partner: Comfortable operating in a fast-paced environment with cross-functional stakeholders, capable of explaining technical trade-offs to non-technical partners.
+
+- Bonus: Experience working with HealthKit or behavior-change-driven apps.
+
+Qualifications
+
+- 12-15+ of experience in professional iOS development.
+
+- Expertise in Swift and modern Apple frameworks (SwiftUI, Core Data, etc.).
+
+- Deep knowledge of the iOS SDK, app lifecycle, and memory management.
+
+- Familiarity with native tooling, including XCTest for unit/UI testing, CI/CD pipelines (Fastlane/GitHub Actions), and feature flagging.
+
+- Strong communication skills and the ability to mentor junior engineers while articulating technical decisions.
+Base salary may vary depending on, but not limited to: skills, experience, and location. This role is also eligible for a comprehensive benefits package and annual bonus program.
+
+US Pay Range
+$160,000—$200,000 CAD
+
+At WeightWatchers, our mission is to build a worldwide community connected by healthy habits. If that resonates with you, then we would love to talk. WeightWatchers values developing community within our employee population as well. We have a hybrid work environment to allow our employees to find the right work-life balance.
+
+At WW, cultivating a diverse and inclusive workplace is a priority. We are committed as individuals, as an organization, and as fellow humans to advocate for and support our employees, our members, and our communities. We are proud to be an equal opportunity employer and do not discriminate on the basis of sex, race, color, creed, national origin, marital status, age, religion, sexual orientation, gender identity, gender expression, veteran status, or disability.
+
+By agreeing to participate in our process, you agree that any information we collect is subject to our Privacy Policy.
+
+Maryland
+
+Under Maryland law, an employer may not require or demand, as a condition of employment, prospective employment, or continued employment, that an individual submit to or take a polygraph examination or similar test. An employer who violates this law is guilty of a misdemeanor and subject to a fine not exceeding $100.
+
+Massachusetts
+
+It is unlawful in Massachusetts to require or administer a lie detector test as a condition of employment or continued employment. An employer who violates this law shall be subject to criminal penalties and civil liability.
+
+WeightWatchers complies with all applicable Rhode Island Workers' Compensation laws (Chapters 29-38 of the R.I. General Laws). Eligible employees are covered by worker's compensation insurance for work-related injuries or illness.
+
+RECRUITMENT SECURITY & FRAUD PREVENTION
+
+At WeightWatchers, we prioritize the security of our candidates. To ensure you are communicating with a legitimate representative of our team, please keep the following security standards in mind:
+
+- Verified Email Domain: All official correspondence from our recruiting team will originate from an @ww.com email address.
+
+- Live Engagement: Our hiring process requires live interaction. We do not conduct interviews or extend employment offers solely through text message, chat apps, or automated email-only exchanges.
+
+- Financial Integrity: WeightWatchers will never ask for any form of payment from a candidate. We will never send you a check with instructions to purchase equipment or "start-up kits" on our behalf.
+
+- Secure Data Collection: Sensitive personal information (such as banking or identity tax info) is only requested through our official, secure onboarding portal after a formal offer has been extended, never during the interview phase.
+
+Stay Vigilant: If you are contacted by someone claiming to represent WeightWatchers and the process deviates from these standards, please do not share any personal information. You can verify any open position by visiting our official careers page at https://job-boards.greenhouse.io/ww
