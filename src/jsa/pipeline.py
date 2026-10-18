@@ -1,8 +1,8 @@
 """analyze(): parse -> retrieve -> match -> check -> save as draft.
 
 The check step is plain Python and doesn't trust the model: bullets that cite
-nothing, or cite a chunk that wasn't retrieved, are dropped and counted, and the
-fit score is clamped to 0-100.
+nothing, or cite a chunk that wasn't retrieved, are dropped and counted, the fit
+score is clamped to 0-100, and the verdict is derived from the score.
 """
 
 import time
@@ -13,6 +13,9 @@ from jsa.match import match
 from jsa.parse import parse_posting
 from jsa.retrieve import Chunk
 from jsa.schemas import FitReport, Posting
+
+# The matcher's rubric: 75 and up is strong, below 40 is poor.
+STRONG_FROM, POOR_BELOW = 75, 40
 
 INJECTION_WARNING = (
     "This posting contains text that tries to instruct an AI screener. "
@@ -58,11 +61,20 @@ class AnalysisResult:
         return "\n".join(lines)
 
 
+def verdict_for(score: int) -> str:
+    return "strong" if score >= STRONG_FROM else "poor" if score < POOR_BELOW else "partial"
+
+
 def apply_guard(report: FitReport, retrieved_ids: set[str]) -> tuple[FitReport, int]:
-    """Drop bullets without a valid citation and clamp the score; return (report, dropped)."""
+    """Drop bullets without a valid citation, clamp the score and derive the verdict.
+
+    The model sometimes labels a score of 38 "partial"; taking the verdict from the
+    score means the two can never disagree. Returns (report, bullets dropped).
+    """
     kept = [b for b in report.bullets if b.chunk_ids and set(b.chunk_ids) <= retrieved_ids]
     score = max(0, min(100, report.fit_score))
-    return report.model_copy(update={"bullets": kept, "fit_score": score}), len(report.bullets) - len(kept)
+    update = {"bullets": kept, "fit_score": score, "verdict": verdict_for(score)}
+    return report.model_copy(update=update), len(report.bullets) - len(kept)
 
 
 def analyze(posting_text: str, run_id: str | None = None) -> AnalysisResult:

@@ -1,5 +1,5 @@
 from jsa.eval_checks import (
-    PostingScore, missing_terms, numbers_in, score_twins, summary_line, unsupported_numbers,
+    PostingScore, combine, missing_terms, numbers_in, score_twins, summary_line, unsupported_numbers,
 )
 from jsa.retrieve import Chunk
 from jsa.schemas import Bullet, FitReport, Posting
@@ -58,3 +58,21 @@ def test_error_fails_every_check_and_summary_counts_it():
     assert not broken.passed and ok.passed
     line = summary_line([broken, ok])
     assert "Verdict 1/2" in line and "Valid 1/2" in line and "Injection not run" in line
+
+
+def test_combine_uses_majority_verdict_and_strict_safety_checks():
+    runs = [
+        PostingScore("a.txt", "partial", verdict="partial", fit_score=42, cost_usd=0.03, seconds=10),
+        PostingScore("a.txt", "partial", verdict="poor", fit_score=18, cost_usd=0.03, seconds=10,
+                     unsupported=["90 not in cited chunks"]),
+        PostingScore("a.txt", "partial", verdict="partial", fit_score=46, cost_usd=0.03, seconds=10),
+    ]
+    c = combine(runs)
+    assert (c.verdict, c.agree, c.runs, c.fit_score) == ("partial", 2, 3, 35)
+    assert c.verdict_ok and not c.stable
+    assert not c.numbers_ok  # one invented number in three runs still fails
+
+
+def test_combine_without_majority_fails_verdict():
+    runs = [PostingScore("a.txt", "partial", verdict=v, fit_score=50) for v in ("partial", "poor", "strong")]
+    assert not combine(runs).verdict_ok

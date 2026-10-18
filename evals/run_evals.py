@@ -2,6 +2,7 @@
 
     uv run python evals/run_evals.py               # all postings; writes evals/results.md
     uv run python evals/run_evals.py --only dawson # one posting while iterating; no file
+    uv run python evals/run_evals.py --repeat 3    # each posting 3 times: majority verdict + stability
 
 Spends real API money, about $0.05 per posting. Run it from the repo root. Exits
 non-zero when any check fails.
@@ -22,7 +23,7 @@ import yaml  # noqa: E402
 
 from jsa import llm, retrieve, tracker  # noqa: E402
 from jsa.eval_checks import (  # noqa: E402
-    PostingScore, failure_details, missing_terms, results_table, score_twins,
+    PostingScore, combine, failure_details, missing_terms, results_table, score_twins,
     summary_line, unsupported_numbers,
 )
 from jsa.pipeline import analyze  # noqa: E402
@@ -92,12 +93,13 @@ def git_version() -> str:
     return git("rev-parse", "--short", "HEAD") + (" (uncommitted changes)" if dirty else "")
 
 
-def write_results(scores: list[PostingScore], summary: str, details: list[str]) -> None:
+def write_results(scores: list[PostingScore], summary: str, details: list[str], repeat: int) -> None:
     lines = [
         "# Eval results",
         "",
         f"Run {date.today().isoformat()} at commit {git_version()} · parse {llm.parse_model()}"
-        f" · match {llm.match_model()} · documents `{retrieve.docs_dir()}`",
+        f" · match {llm.match_model()} · documents `{retrieve.docs_dir()}`"
+        + (f" · each posting run {repeat} times" if repeat > 1 else ""),
         "",
         f"**{summary}**",
         "",
@@ -112,6 +114,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--only", action="append", default=[],
                         help="Run only postings whose file name contains this text (repeatable)")
+    parser.add_argument("--repeat", type=int, default=1,
+                        help="Run each posting N times; verdicts count only as a clear majority")
     args = parser.parse_args()
 
     key = load_key()
@@ -121,8 +125,12 @@ def main() -> None:
 
     scores = []
     for name in names:
-        print(f"Running {name} ...", flush=True)
-        scores.append(run_one(name, key[name]))
+        runs = []
+        for i in range(args.repeat):
+            print(f"Running {name}" + (f" ({i + 1}/{args.repeat})" if args.repeat > 1 else "") + " ...",
+                  flush=True)
+            runs.append(run_one(name, key[name]))
+        scores.append(combine(runs))
     score_twins(scores)
 
     summary = summary_line(scores)
@@ -133,7 +141,7 @@ def main() -> None:
     if args.only:
         print("(partial run: evals/results.md not updated)")
     else:
-        write_results(scores, summary, details)
+        write_results(scores, summary, details, args.repeat)
         print("Wrote evals/results.md")
     sys.exit(0 if all(s.passed for s in scores) else 1)
 

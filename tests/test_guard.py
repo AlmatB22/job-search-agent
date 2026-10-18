@@ -20,3 +20,10 @@ def test_drops_uncited_and_unknown_citations():
 def test_clamps_score():
     assert apply_guard(report(score=140), set())[0].fit_score == 100
     assert apply_guard(report(score=-5), set())[0].fit_score == 0
+
+
+def test_verdict_follows_score_thresholds():
+    assert apply_guard(report(score=38), set())[0].verdict == "poor"
+    assert apply_guard(report(score=40), set())[0].verdict == "partial"
+    assert apply_guard(report(score=74), set())[0].verdict == "partial"
+    assert apply_guard(report(score=75), set())[0].verdict == "strong"
