@@ -1,2 +1,30 @@
-# mcp_servers block for the Hermes config (no secrets).
-# Filled in when the MCP server is wired up to Hermes.
+# Merge into hermes-data/config.yaml after running the Hermes setup wizard.
+# No secrets here: keys and the Telegram token live in hermes-data/.env.
+
+mcp_servers:
+  jsa:
+    url: "http://jsa-mcp:8000/mcp"   # the tool server's name on agent-net
+    timeout: 180                     # matching can take ~30 s; leave room
+    connect_timeout: 30
+    tools:
+      resources: false               # the server exposes only tools
+      prompts: false
+
+agent:
+  # Fewer tools means fewer ways for a malicious posting to steer the agent.
+  # The job needs only the three jsa tools (mcp_jsa_analyze_posting,
+  # mcp_jsa_approve_application, mcp_jsa_list_applications).
+  disabled_toolsets:
+    - web             # no browsing or page fetching
+    - search
+    - browser
+    - terminal        # no shell commands
+    - file            # no reading or writing files
+    - code_execution
+    - delegation      # no spawning sub-agents
+    - cronjob         # no scheduled tasks
+    - messaging       # no sending messages to other chats or platforms
+    - memory          # nothing from a posting can persist into future sessions
+    - skills
+    - image_gen
+    - tts
